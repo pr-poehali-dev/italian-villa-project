@@ -55,61 +55,79 @@ export default function Index() {
         </div>
       </section>
 
+      {/* Info Section with vertical photos */}
+      <section className="py-20 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="grid lg:grid-cols-2 gap-12 items-center mb-20">
+            <div>
+              <h2 className="font-playfair text-4xl md:text-5xl font-bold text-foreground mb-6">
+                Информация о площадке
+              </h2>
+              <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+                Уникальное старинное двухэтажное здание в итальянском стиле с внутренним залом, 
+                большой террасой и кухней.
+              </p>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                Идеально для свадеб, гастроужинов, деловых встреч, съёмок и камерных событий.
+              </p>
+            </div>
+            <div className="grid grid-cols-3 gap-4">
+              <div className="aspect-[3/4] bg-cover bg-center rounded-lg" style={{backgroundImage: `url('/img/cfe14282-869c-4538-8641-8539116f70ab.jpg')`}}></div>
+              <div className="aspect-[3/4] bg-cover bg-center rounded-lg" style={{backgroundImage: `url('/img/c285fc6f-a796-45f1-b471-a200cccb560a.jpg')`}}></div>
+              <div className="aspect-[3/4] bg-cover bg-center rounded-lg" style={{backgroundImage: `url('/img/8261b020-149f-4b99-a61e-d3abe7cfc148.jpg')`}}></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* About Section */}
-      <section id="about" className="py-20 bg-background">
+      <section id="about" className="py-20 bg-primary/5">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="font-playfair text-4xl md:text-5xl font-bold text-foreground mb-6">
               О площадке
             </h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Уникальное старинное двухэтажное здание в итальянском стиле с внутренним залом, 
-              большой террасой и кухней. Идеально для свадеб, гастроужинов, деловых встреч, 
-              съёмок и камерных событий.
+            <p className="text-lg text-muted-foreground max-w-4xl mx-auto leading-relaxed italic mb-8">
+              Villa Aragosta — вилла вкуса, вина и любви. Легенда гласит, что хозяйка К.А. создала пространство мечты — 
+              вдохновлённая Италией, морем, вином и настоящими эмоциями. В центре — уют, закрытость от шума города и уважение к гостю. 
+              Это не просто аренда, это приглашение в дом, где вас ждали.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
             {[
               {
-                icon: "Building",
-                title: "Уникальное пространство",
-                description: "Отдельно стоящее двухэтажное здание с террасой в итальянском стиле"
+                title: "Отдельно стоящее двухэтажное здание с террасой в итальянском стиле",
+                description: "стиль, приватность и атмосфера в центре Краснодара."
               },
               {
-                icon: "MapPin",
-                title: "Удобное расположение", 
-                description: "В самом центре города — легко добраться гостям, подрядчикам и курьерам"
+                title: "Тосканский внутренний зал, винная стена, деревянная мебель",
+                description: "плетёные лавки, камень и зелень — место уже готово к событию."
               },
               {
-                icon: "ChefHat",
-                title: "Собственная кухня",
-                description: "Профессиональная команда «Academy» отвечает за гастрономию"
+                title: "В самом центре города",
+                description: "легко добраться гостям, подрядчикам и курьерам. При этом — закрытая территория без посторонних."
               },
               {
-                icon: "Settings",
-                title: "Гибкое оснащение",
-                description: "Звук, освещение, технические возможности для артистов и диджеев"
+                title: "Профессиональная команда «Academy» отвечает за гастрономию",
+                description: "всё на площадке под ключ, от фуршета до банкета."
               },
               {
-                icon: "Sofa",
-                title: "Дизайнерская мебель",
-                description: "Эксклюзивная мебель, красивая хрустальная посуда"
+                title: "Звук, эксклюзивная мебель, красивая хрустальная посуда",
+                description: "оборудованная зона гримёрной, профессиональная кухня, освещение, технические возможности для артистов и диджеев."
               },
               {
-                icon: "Users",
-                title: "Индивидуальный подход",
-                description: "Мы вникаем в ваш формат, сопровождаем и делаем красиво"
+                title: "Мы не просто сдаём зал",
+                description: "мы вникаем в ваш формат, сопровождаем и делаем красиво. От первого звонка — до финального бокала."
+              },
+              {
+                title: "Свадьбы, деловые встречи, съёмки, лекции, ужины",
+                description: "капсульные мероприятия — формат не ограничен."
               }
             ].map((feature, index) => (
               <Card key={index} className="group hover:shadow-lg transition-shadow duration-300 border-primary/10">
-                <CardContent className="p-6 text-center">
-                  <div className="mb-4 flex justify-center">
-                    <div className="p-3 bg-primary/10 rounded-full group-hover:bg-primary/20 transition-colors">
-                      <Icon name={feature.icon} size={28} className="text-primary" />
-                    </div>
-                  </div>
-                  <h3 className="font-playfair text-xl font-semibold mb-3 text-foreground">
+                <CardContent className="p-6">
+                  <h3 className="font-playfair text-lg font-semibold mb-3 text-foreground">
                     {feature.title}
                   </h3>
                   <p className="text-muted-foreground leading-relaxed">
@@ -123,14 +141,14 @@ export default function Index() {
       </section>
 
       {/* Spaces Section */}
-      <section id="spaces" className="py-20 bg-primary/5">
+      <section id="spaces" className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="font-playfair text-4xl md:text-5xl font-bold text-foreground mb-6">
               Пространство
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Villa Aragosta — вилла вкуса, вина и любви. Пространство, которое трансформируется под ваше событие.
+              Пространство, которое трансформируется под ваше событие.
             </p>
           </div>
 
@@ -178,18 +196,18 @@ export default function Index() {
       </section>
 
       {/* Pricing Section */}
-      <section id="prices" className="py-20 bg-background">
+      <section id="prices" className="py-20 bg-primary/5">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="font-playfair text-4xl md:text-5xl font-bold text-foreground mb-6">
-              Цены и условия
+              Цены
             </h2>
           </div>
 
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-6xl mx-auto">
             <Card className="mb-8 border-primary/20">
               <CardContent className="p-8">
-                <h3 className="font-playfair text-2xl font-semibold mb-6 text-center">Условия аренды</h3>
+                <h3 className="font-playfair text-2xl font-semibold mb-6 text-center">Условия и правила аренды</h3>
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="space-y-4">
                     <div className="flex items-center space-x-3">
@@ -202,17 +220,17 @@ export default function Index() {
                     </div>
                     <div className="flex items-center space-x-3">
                       <Icon name="Baby" size={20} className="text-primary" />
-                      <span>Дети до 3 лет не учитываются</span>
+                      <span>Дети до 3 лет не учитываются в общем количестве</span>
                     </div>
                   </div>
                   <div className="space-y-4">
                     <div className="flex items-center space-x-3">
                       <Icon name="Users" size={20} className="text-primary" />
-                      <span>За превышение — 1000 ₽/чел</span>
+                      <span>За превышение количества гостей — 1000 ₽/чел</span>
                     </div>
                     <div className="flex items-center space-x-3">
                       <Icon name="UserCheck" size={20} className="text-primary" />
-                      <span>Координатор — обязателен</span>
+                      <span>Координатор от площадки — обязателен</span>
                     </div>
                   </div>
                 </div>
@@ -223,10 +241,10 @@ export default function Index() {
               <CardContent className="p-8">
                 <h3 className="font-playfair text-2xl font-semibold mb-6 text-center">Условия бронирования</h3>
                 <div className="space-y-4 text-muted-foreground">
-                  <p>• Бронирование даты осуществляется при 20% предоплате от полной стоимости аренды площадки</p>
-                  <p>• Не менее чем за 7 дней до мероприятия вносится оставшаяся стоимость аренды</p>
-                  <p>• Возврат денежных средств при отмене не менее чем за 30 дней</p>
-                  <p>• При отмене менее чем за 30 дней предоплата не возвращается</p>
+                  <p>• Бронирование даты осуществляется при 20-ти % предоплате от полной стоимости аренды площадки</p>
+                  <p>• Не менее чем за 7 дней до вашего мероприятия вносится оставшаяся стоимость аренды ПРОСТРАНСТВА</p>
+                  <p>• Возврат денежных средств при отмене не менее, чем за 30 дней</p>
+                  <p>• При отмене менее, чем за 30 дней, предоплата не возвращается</p>
                 </div>
               </CardContent>
             </Card>
@@ -235,7 +253,7 @@ export default function Index() {
       </section>
 
       {/* Catering Section */}
-      <section id="catering" className="py-20 bg-primary/5">
+      <section id="catering" className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="font-playfair text-4xl md:text-5xl font-bold text-foreground mb-6">
@@ -246,7 +264,7 @@ export default function Index() {
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
             <div>
               <div className="mb-8">
                 <h3 className="font-playfair text-3xl font-semibold mb-6">О кейтеринге</h3>
@@ -264,6 +282,9 @@ export default function Index() {
                     <span>Накормили более 300000 гостей</span>
                   </div>
                 </div>
+                <p className="text-muted-foreground mt-6">
+                  На площадке во время мероприятия работает профессиональная команда шеф-поваров, официантов и барменов.
+                </p>
               </div>
 
               <div>
@@ -290,22 +311,40 @@ export default function Index() {
                     <span>Авторские коктейли</span>
                   </li>
                 </ul>
+                
+                <div className="mt-8">
+                  <p className="text-sm text-muted-foreground mb-4">
+                    Для просчета меню и уточнения информации:
+                  </p>
+                  <Button className="bg-green-600 hover:bg-green-700 text-white">
+                    <Icon name="MessageCircle" size={18} className="mr-2" />
+                    WhatsApp: 8 928 210 00 60
+                  </Button>
+                </div>
               </div>
             </div>
 
             <div className="relative">
               <img 
-                src="/img/8261b020-149f-4b99-a61e-d3abe7cfc148.jpg" 
-                alt="Кейтеринг" 
-                className="rounded-lg shadow-2xl w-full h-96 object-cover"
+                src="/img/407de33f-607e-4111-971b-b4aa5246fc19.jpg" 
+                alt="Официанты" 
+                className="rounded-lg shadow-2xl w-full h-96 object-cover mb-4"
               />
             </div>
+          </div>
+
+          <div className="relative">
+            <img 
+              src="/img/75bce03f-09b6-494c-afdc-b2a15f90ccf7.jpg" 
+              alt="Сервировка и еда" 
+              className="rounded-lg shadow-2xl w-full h-64 object-cover"
+            />
           </div>
         </div>
       </section>
 
       {/* Contacts Section */}
-      <section id="contacts" className="py-20 bg-background">
+      <section id="contacts" className="py-20 bg-primary/5">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="font-playfair text-4xl md:text-5xl font-bold text-foreground mb-6">
@@ -321,7 +360,7 @@ export default function Index() {
                   <div className="space-y-4">
                     <div className="flex items-center space-x-3">
                       <Icon name="MapPin" size={20} className="text-primary" />
-                      <span>Краснодар, район центральный Гоголя 49/1</span>
+                      <span>Краснодар, район центральный Гоголя 49\1</span>
                     </div>
                     <div className="flex items-center space-x-3">
                       <Icon name="Phone" size={20} className="text-primary" />
@@ -335,16 +374,6 @@ export default function Index() {
                       <Icon name="Calendar" size={20} className="text-primary" />
                       <span>Просмотр по записи</span>
                     </div>
-                  </div>
-
-                  <div className="mt-8">
-                    <p className="text-sm text-muted-foreground mb-4">
-                      Для просчета меню и уточнения информации:
-                    </p>
-                    <Button className="w-full bg-green-600 hover:bg-green-700 text-white">
-                      <Icon name="MessageCircle" size={18} className="mr-2" />
-                      WhatsApp: 8 928 210 00 60
-                    </Button>
                   </div>
                 </CardContent>
               </Card>
@@ -388,7 +417,7 @@ export default function Index() {
                       Отправить заявку
                     </Button>
                     <p className="text-xs text-muted-foreground">
-                      Нажимая кнопку, вы соглашаетесь с политикой конфиденциальности
+                      Нажимая кнопку, вы соглашаетесь с <a href="/privacy" className="text-primary hover:underline">политикой конфиденциальности</a>
                     </p>
                   </form>
                 </CardContent>
